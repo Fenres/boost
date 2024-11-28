@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet">
+    <title>GET PET BACK</title>
+</head>
+<body>
+   <header>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="png/logo.jpg" class="w-25 rounded-3" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Личный кабинет</a>
+              </li>
+       
+              <li class="nav-item">
+                <a class="nav-link" href="add_pet.html">Добавить объявление</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="search.html">Поиск по объявлениям</a>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Вход / Регистрация       </button>
+              </li>
+            </ul>
+            
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" list="pets" placeholder="Поиск" aria-label="Search">
+              <button class="btn btn-primary me-2" onclick="">Поиск</button>
+
+  
+              
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="authModalLabel">Авторизация</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Вход</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Регистрация</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="authTabContent">
+                                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                    <form id="loginForm">
+                                        <!-- Login form fields -->
+                                        <div class="mb-3">
+                                            <label for="loginEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="loginEmail" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="loginPassword" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control" id="loginPassword" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Войти</button>
+                                        <div id="loginMessage"></div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                    <form id="registerForm">
+                                        <div class="mb-3">
+                                            <label for="registerName" class="form-label">Имя</label>
+                                            <input type="text" class="form-control" id="registerName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerPhone" class="form-label">Телефон</label>
+                                            <input type="tel" class="form-control" id="registerPhone" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="registerEmail" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerPassword" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control" id="registerPassword" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="registerPasswordConfirm" class="form-label">Подтверждение пароля</label>
+                                            <input type="password" class="form-control" id="registerPasswordConfirm" required>
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="registerConfirm" required>
+                                            <label class="form-check-label" for="registerConfirm">Согласие на обработку данных</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+                                        <div id="registerMessage"></div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+              <datalist id="pets">
+                <option value="Кошка"/>
+                <option value="Собака"/>
+                <option value="Корова"/>
+                <option value="Крокодил"/>
+                <option value="Сова"/>
+              </datalist>
+            </form>
+          </div>
+        </div>
+
+
+      
+      </nav>
+     
+  </header>  
+  <div class="text-center text-white bg-primary m-2">
+    <h1 class="text-center text-white bg-primary m-2">Личный кабинет</h1>
+
+    <h2 class="text-center text-white bg-primary m-2">Информация о пользователе</h2>
+  </div>
+     <div class="container">
+    <p><strong>Имя:</strong> Иван Иванов</p>
+    <p><strong>Телефон:</strong> +79111234567  <button class="btn btn-primary me-2" onclick="">Изменить</button></p> 
+    <p><strong>Email:</strong> ivan.ivanov@example.com <button class="btn btn-primary me-2" onclick="">Изменить</button></p>
+    <p><strong>Дата регистрации:</strong> 2024-03-01</p>
+    <p><strong>Дней на сайте:</strong> 150</p>
+    <p><strong>Количество объявлений:</strong> 4</p>
+    <p><strong>Найденных животных:</strong> 2</p>
+    <h2 class=" text-white bg-primary m-2">Найденные животных</h2>
+    <div class="d-flex flex-row flex-wrap">
+      <div class="d-flex flex-row flex-wrap border m-3 p-3" style="min-width: 300px; width: 30%;">
+        <img src="png/кошка.jpg" class="w-75" alt="рисунок животного">
+        <p class="w-50 text-primary" style="min-width: 250px;">id:</p>
+        <p class="w-50" style="min-width: 250px;">14</p>
+  
+        <p class="w-50 text-primary" style="min-width: 250px;">Вид животного:</p>
+        <p class="w-50" style="min-width: 250px;"> Кошка</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Описание:</p>
+        <p class="w-50" style="min-width: 300px;">Потерялась кошка, пушистая, серая. Любит играть, ласковая.</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Номер чипа:</p>
+        <p class="w-50" style="min-width: 300px;">ca-001-spb</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Район:</p>
+        <p class="w-50" style="min-width: 300px;">Василиостровский</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Дата:</p>
+        <p class="w-50" style="min-width: 300px;">24-03-2020</p>
+      </div>
+      <div class="d-flex flex-row flex-wrap border m-3 p-3" style="min-width: 300px; width: 30%;">
+        <img src="png/коза.jpeg" class="w-75" alt="рисунок животного">
+        <p class="w-50 text-primary" style="min-width: 250px;">id:</p>
+        <p class="w-50" style="min-width: 250px;">18</p>
+  
+        <p class="w-50 text-primary" style="min-width: 250px;">Вид животного:</p>
+        <p class="w-50" style="min-width: 250px;"> Коза</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Описание:</p>
+        <p class="w-50" style="min-width: 300px;">Потерялась коза, последний раз видели в здании Московского вокзала
+          г. Санкт-Петербург. Коза белая, пуховая.</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Номер чипа:</p>
+        <p class="w-50" style="min-width: 300px;">go-011-spb</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Район:</p>
+        <p class="w-50" style="min-width: 300px;">Центральный</p>
+  
+        <p class="w-50 text-primary" style="min-width: 300px;">Дата:</p>
+        <p class="w-50" style="min-width: 300px;">14-03-2022</p>
+      </div>
+    </div>
+    <button id="logoutButton" class="btn btn-danger">Выйти</button>
+</div>
+  <br><br><br><br><br><br><br><br><br><br>
+  </main>
+  
+  <footer class="border-bottom bg-primary">
+    <p class="text-white p-3">GET PET BACK © Copyright, 2024</p>
+    <p class="text-white p-3">Все права защищены</p>
+  </footer>
+  
+  <!-- Дополнительный JavaScript; выберите один из двух! -->
+  
+  <!-- Вариант 1: Bootstrap в связке с Popper -->
+  <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script> 
+    <script>
+        
+    </script>
+</body>
+</html>
